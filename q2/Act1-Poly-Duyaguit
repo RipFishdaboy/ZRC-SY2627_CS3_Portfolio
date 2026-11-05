@@ -7,8 +7,8 @@ class Patient:
         return self.bill
 
     def display_bill(self):
-        print(f"Patient Name:  {self.name}")
-        print(f"Patient Type: {self.patient_type}")
+        print(f"Patient Name:",  self.name)
+        print(f"Patient Type:", self.patient_type)
         print(f"Original Bill: ₱{self.bill:,.2f}")
         print(f"Final Bill: ₱{self.calculate_bill():,.2f}")
         print()
