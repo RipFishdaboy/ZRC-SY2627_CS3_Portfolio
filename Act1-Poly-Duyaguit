@@ -1,0 +1,47 @@
+class Patient:
+    def __init__(self, name, bill):
+        self.name = name
+        self.bill = bill
+
+    def calculate_bill(self):
+        return self.bill
+
+    def display_bill(self):
+        print(f"Patient Name:  {self.name}")
+        print(f"Patient Type: {self.patient_type}")
+        print(f"Original Bill: ₱{self.bill:,.2f}")
+        print(f"Final Bill: ₱{self.calculate_bill():,.2f}")
+        print()
+
+class RegularPatient(Patient):
+    def __init__(self, name, bill):
+        super().__init__(name, bill)
+        self.patient_type = "Regular Patient"
+
+class SeniorCitizen(Patient):
+    def __init__(self, name, bill):
+        super().__init__(name, bill)
+        self.patient_type = "Senior Citizen"
+
+    def calculate_bill(self):
+        return self.bill * 0.80
+
+class PhilHealthMember(Patient):
+    def __init__(self, name, bill):
+        super().__init__(name, bill)
+        self.patient_type = "PhilHealth Member"
+
+    def calculate_bill(self):
+        return self.bill * 0.85
+
+patient1 = RegularPatient("Juan Dela Cruz", 15000)
+patient2 = SeniorCitizen("Maria Santos", 15000)
+patient3 = PhilHealthMember("Pedro Reyes", 15000)
+
+print("Hospital Billing System")
+print("----------------------")
+
+
+patient1.display_bill()
+patient2.display_bill()
+patient3.display_bill()
